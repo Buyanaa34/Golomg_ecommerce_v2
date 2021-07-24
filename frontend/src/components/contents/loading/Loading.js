@@ -1,7 +1,7 @@
 import { Height } from "@material-ui/icons";
 import React from "react";
 import Lottie from "react-lottie";
-import * as loading from "../../../67771-star-sine.json";
+import * as loading from "../../../animations/67771-star-sine.json";
 import "./style.css";
 function Loading() {
   const defaultOptions = {
@@ -14,7 +14,13 @@ function Loading() {
   };
   return (
     <div className="loader_container">
-      <Lottie options={defaultOptions} height={"45%"} width={"45%"}></Lottie>
+      <Lottie
+        options={defaultOptions}
+        loop
+        autoplay
+        height={"45%"}
+        width={"45%"}
+      ></Lottie>
     </div>
   );
 }

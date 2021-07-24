@@ -33,7 +33,7 @@ const Inquiry = (props) => {
 
   return (
     <div className="pagez">
-      <h1>Гүйлгээ</h1>
+      <h1 className="welcoming">Гүйлгээ</h1>
       <div className="form_holder">
         {/* <Form changed={changed_fnc} placeholder="checksum" id="1" /> */}
         <Form

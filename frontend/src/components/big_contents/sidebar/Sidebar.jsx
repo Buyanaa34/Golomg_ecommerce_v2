@@ -19,6 +19,7 @@ function Sidebar() {
           />
         </li>
       </ul>
+      <div className="myinfo">Made with &hearts; by Buyanovic</div>
     </div>
   );
 }
