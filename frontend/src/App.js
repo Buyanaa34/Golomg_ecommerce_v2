@@ -4,7 +4,6 @@ import Holder from "./components/big_contents/holder/Holder";
 import { BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Loading from "./components/contents/loading/Loading";
-import Lotte from "react-lottie";
 function App() {
   const [done, setdone] = useState(undefined);
   var html_code = "";

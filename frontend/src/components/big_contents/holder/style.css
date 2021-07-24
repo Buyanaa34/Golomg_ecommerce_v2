@@ -4,10 +4,21 @@
   text-align: center;
   background-color: rgb(221, 221, 221);
   float: left;
-  margin-left: 12% !important;
   box-shadow: 5px 5px #c7c7c7;
   margin: 10px;
+  animation-name: holder_anime;
+  animation-duration: 1.5s;
+  margin-left: 12%;
   transition: transform 0.12s ease-out;
+}
+
+@keyframes holder_anime {
+  from {
+    margin-left: 250px;
+  }
+  to {
+    margin-left: 12%;
+  }
 }
 
 h1 {
@@ -21,6 +32,7 @@ h1 {
 }
 
 .form_holder {
+  margin-top: 50px !important;
   justify-items: center;
   margin: 0 auto;
   display: grid;

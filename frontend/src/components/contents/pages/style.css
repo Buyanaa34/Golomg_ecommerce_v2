@@ -2,7 +2,25 @@
   border-radius: 5px;
   box-shadow: 5px 5px #b8b8b8;
   width: 70%;
+  background-color: #b8b8b883;
+  margin: auto;
   height: 100%;
+}
+.welcoming {
+  margin-bottom: 50px;
+  animation-name: title_anime;
+  animation-duration: 1.7s;
+}
+
+@keyframes title_anime {
+  from {
+    margin-left: 100px;
+    color: #2a3546;
+  }
+  to {
+    margin-left: 0;
+    color: rgb(139, 160, 162);
+  }
 }
 
 .pages {

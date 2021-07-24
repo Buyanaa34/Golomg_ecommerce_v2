@@ -49,7 +49,7 @@ const Tokens = (props) => {
   };
   return (
     <div className="pagez">
-      <h1>Токеноор</h1>
+      <h1 className="welcoming">Токеноор</h1>
       <div className="form_holder">
         <Form turul="num" changed={changed_fnc} placeholder="amount" id="1" />
         {/* <Form placeholder="checksum" id="2" /> */}

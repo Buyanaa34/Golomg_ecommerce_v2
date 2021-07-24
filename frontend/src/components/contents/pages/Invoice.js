@@ -52,7 +52,7 @@ const Invoice = (props) => {
   const gettoken_options = ["N", "Y"];
   return (
     <div className="pagez">
-      <h1>Нэхэмжлэл</h1>
+      <h1 className="welcoming">Нэхэмжлэл</h1>
       <div className="form_holder">
         <Form turul="num" changed={changed_fnc} placeholder="amount" id="1" />
         <Form turul="any" changed={changed_fnc} placeholder="callback" id="2" />
@@ -78,7 +78,6 @@ const Invoice = (props) => {
         {/* <Form changed={changed_fnc} placeholder="checksum" id="5" /> */}
         {/* <Form changed={changed_fnc} placeholder="returnType" id="5" /> */}
       </div>
-      <div id="buuz"></div>
       <Button onclk={clk} whichcomp="invoice" txt="Submit"></Button>
     </div>
   );
