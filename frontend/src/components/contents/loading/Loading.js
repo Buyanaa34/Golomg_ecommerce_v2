@@ -1,4 +1,3 @@
-import { Height } from "@material-ui/icons";
 import React from "react";
 import Lottie from "react-lottie";
 import * as loading from "../../../animations/67771-star-sine.json";
@@ -7,6 +6,7 @@ function Loading() {
   const defaultOptions = {
     loop: true,
     autoplay: true,
+    controls: false,
     animationData: loading.default,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",

@@ -2,8 +2,19 @@ import React, { useEffect, useState } from "react";
 import Button from "../button/Button";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import Lottie from "react-lottie";
 import Dropdown from "../dropdown/Dropdown";
+import * as loading from "../../../animations/35260-credit-card-fail.json";
 function Showdata(props) {
+  const defaultOptions = {
+    loop: false,
+    autoplay: true,
+    controls: false,
+    animationData: loading.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   var isresult_failed = false;
   var nehemjlel_array = [];
   nehemjlel_array[0] = "eng";
@@ -85,6 +96,12 @@ function Showdata(props) {
           <div>
             <section>
               <h1>Results that came from Гүйлгээ шалгах</h1>
+              <Lottie
+                options={defaultOptions}
+                height={"20%"}
+                width={"20%"}
+                speed="0.8"
+              ></Lottie>
               <div className="show_results_mid">{tailbar}</div>
               <Button txt="Back"></Button>
             </section>
@@ -176,6 +193,12 @@ function Showdata(props) {
           <div>
             <section>
               <h1>Results that came from Нэхэмжлэл үүсгэх</h1>
+              <Lottie
+                options={defaultOptions}
+                height={"20%"}
+                width={"20%"}
+                speed="0.8"
+              ></Lottie>
               <div className="show_results_mid">{tailbar}</div>
               <Button txt="Back"></Button>
             </section>
@@ -242,6 +265,12 @@ function Showdata(props) {
           <div>
             <section>
               <h1>Results that came from Токеноор гүйлгээ хийх</h1>
+              <Lottie
+                options={defaultOptions}
+                height={"20%"}
+                width={"20%"}
+                speed="0.8"
+              ></Lottie>
               <div className="show_results_mid">{tailbar}</div>
               <Button txt="Back"></Button>
             </section>
