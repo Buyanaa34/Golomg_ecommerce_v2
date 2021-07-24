@@ -1,0 +1,13 @@
+*GO TO THE frontend FOLDER AND TYPE npm install 
+*GO TO THE backend FOLDER AND TYPE npm install
+*******************
+1.npm install express //backend FOLDER
+2.npm install axios --save //frontend FOLDER
+3.npm i react-dropdown //frontend FOLDER
+*******************
+
+*******************
+RUN COMMAND
+1.cd backend
+2.npm run dev
+
