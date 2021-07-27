@@ -5,11 +5,11 @@ import { withRouter } from "react-router-dom";
 import Dropdown from "../dropdown/Dropdown";
 
 const Tokens = (props) => {
-  const langz = ["English", "Mongolia"];
+  const langz = ["English", "Mongolian"];
   let isfilled = true;
   const massiv = []; //onchange event deer input field-d bga utgiig uurtuu hadgalah massiv
-  massiv.length = 5; //massiv-n urt
-  massiv[4] = "1";
+  massiv.length = 7; //massiv-n urt
+  massiv[6] = "1";
   massiv[0] = "tokens";
   const changed_fnc = (event) => {
     const re = /^[0-9\b]+$/;
@@ -60,8 +60,15 @@ const Tokens = (props) => {
           id="2"
         />
         <Form turul="any" changed={changed_fnc} placeholder="token" id="3" />
-        <Dropdown
+        <Form
+          turul="any"
+          changed={changed_fnc}
+          placeholder="Authorization"
           id="4"
+        />
+        <Form turul="any" changed={changed_fnc} placeholder="HMAC" id="5" />
+        <Dropdown
+          id="6"
           songolt={langz}
           changed={changed_fnc}
           placeholder="Language"

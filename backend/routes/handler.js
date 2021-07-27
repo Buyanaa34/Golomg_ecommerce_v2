@@ -12,6 +12,8 @@ module.exports = function (arg1, arg2) {
       i += 1;
     });
     switch (ugugdul[0]) {
+      /***************************************************************************************** */
+      //trans_id=1  auth=2 hmac=3
       case "inquiry":
         var https = require("https");
         var crypto = require("crypto");
@@ -26,7 +28,8 @@ module.exports = function (arg1, arg2) {
           method: "POST",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              ugugdul[2],
             "Content-Type": "application/json",
           },
         };
@@ -55,7 +58,7 @@ module.exports = function (arg1, arg2) {
           var ts = ugugdul[1]; //1623826300587
           var j = {
             checksum: crypto
-              .createHmac("sha256", "Golomt123")
+              .createHmac("sha256", ugugdul[3])
               .update(ts + ts)
               .digest("hex"),
             transactionId: ts,
@@ -80,7 +83,8 @@ module.exports = function (arg1, arg2) {
           method: "POST",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              ugugdul[4],
             "Content-Type": "application/json",
           },
         };
@@ -99,7 +103,8 @@ module.exports = function (arg1, arg2) {
             dummy_val = str;
           });
         };
-        //amount = 1,  callback =2, transactionId = 3, genToken=4, returnType = 5
+        /***************************************************************************************** */
+        //amount = 1,  callback =2, transactionId = 3, auth=4, hmac=5 genToken=6, returnType = 7
         async function sendTrxn0() {
           var req = https.request(options, callback);
           var ts = ugugdul[3]; //Date.now();
@@ -107,12 +112,12 @@ module.exports = function (arg1, arg2) {
             callback: "https://google.mn",
             amount: ugugdul[1], //0.01
             checksum: crypto
-              .createHmac("sha256", "Golomt123")
-              .update(ts + ugugdul[1] + ugugdul[5] + "https://google.mn")
+              .createHmac("sha256", ugugdu[5]) //Golomt123
+              .update(ts + ugugdul[1] + ugugdul[7] + "https://google.mn")
               .digest("hex"),
             transactionId: ts,
-            returnType: ugugdul[5], //GET
-            genToken: ugugdul[4], //Y
+            returnType: ugugdul[7], //GET
+            genToken: ugugdul[6], //Y
           };
           req.write(JSON.stringify(j));
           req.end();
@@ -134,7 +139,8 @@ module.exports = function (arg1, arg2) {
           method: "POST",
           headers: {
             Authorization:
-              "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
+              ugugdul[4],
             "Content-Type": "application/json",
           },
         };
@@ -155,7 +161,7 @@ module.exports = function (arg1, arg2) {
       }
       i++;*/
         };
-        //amount=1   transactionid=2 token=3 language=4
+        //amount=1   transactionid=2 token=3 Auth=4 HMAC=5 language=4
         async function sendTrxn() {
           var req = https.request(options, callback);
           var ts = ugugdul[2]; //Date.now();
@@ -163,7 +169,7 @@ module.exports = function (arg1, arg2) {
             callback: "https://google.mn",
             amount: ugugdul[1],
             checksum: crypto
-              .createHmac("sha256", "Golomt123")
+              .createHmac("sha256", ugugdul[5]) //"Golomt123"
               .update(ugugdul[1] + ts + ugugdul[3])
               .digest("hex"),
             transactionId: ts,

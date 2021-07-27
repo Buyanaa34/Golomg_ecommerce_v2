@@ -7,10 +7,10 @@ import "react-dropdown/style.css";
 const Invoice = (props) => {
   let isfilled = true;
   const massiv = []; //onchange event deer input field-d bga utgiig uurtuu hadgalah massiv
-  massiv[4] = "N";
-  massiv[5] = "GET";
+  massiv[6] = "N";
+  massiv[7] = "GET";
   massiv[0] = "invoice";
-  massiv.length = 6; //massiv-n urt
+  massiv.length = 8; //massiv-n urt
   const changed_fnc = (event) => {
     const re = /^[0-9\b]+$/; //only numbers
     if (event.target.id == "1") {
@@ -62,8 +62,15 @@ const Invoice = (props) => {
           placeholder="transactionId"
           id="3"
         />
-        <Dropdown
+        <Form
+          turul="any"
+          changed={changed_fnc}
+          placeholder="Authorization"
           id="4"
+        />
+        <Form turul="any" changed={changed_fnc} placeholder="HMAC" id="5" />
+        <Dropdown
+          id="6"
           songolt={gettoken_options}
           changed={changed_fnc}
           placeholder="genToken"
@@ -71,7 +78,7 @@ const Invoice = (props) => {
         {/* <Form changed={changed_fnc} placeholder="genToken" id="4" /> */}
         <Dropdown
           changed={changed_fnc}
-          id="5"
+          id="7"
           songolt={returntype_options}
           placeholder="returnType"
         ></Dropdown>

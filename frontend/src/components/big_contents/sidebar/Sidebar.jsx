@@ -19,7 +19,7 @@ function Sidebar() {
           />
         </li>
       </ul>
-      <div className="myinfo">Made with &hearts; by Buyanovic</div>
+      <div className="myinfo">Made with ❤️ by Buyanovic</div>
     </div>
   );
 }

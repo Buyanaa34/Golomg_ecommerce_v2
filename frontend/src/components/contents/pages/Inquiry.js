@@ -6,7 +6,7 @@ import Button from "../button/Button";
 const Inquiry = (props) => {
   let isfilled = true;
   const massiv = []; //onchange event deer input field-d bga utgiig uurtuu hadgalah massiv
-  massiv.length = 2; //massiv-n urt
+  massiv.length = 4; //massiv-n urt
   massiv[0] = "inquiry";
   const changed_fnc = (event) => {
     massiv[event.target.id] = event.target.value; //massiv-n [id] dahi slot-d tuhain id-tai input-n value-g hiij bn
@@ -42,6 +42,13 @@ const Inquiry = (props) => {
           placeholder="transaction_id"
           id="1"
         />
+        <Form
+          turul="any"
+          changed={changed_fnc}
+          placeholder="Authorization"
+          id="2"
+        />
+        <Form turul="any" changed={changed_fnc} placeholder="HMAC" id="3" />
       </div>
       <Button onclk={clk} txt="Submit" whichcomp="inquiry"></Button>
     </div>
