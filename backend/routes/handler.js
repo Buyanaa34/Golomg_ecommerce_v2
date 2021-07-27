@@ -70,6 +70,8 @@ module.exports = function (arg1, arg2) {
 
         next();
         break;
+      /***************************************************************************************** */
+      //amount = 1,  callback =2, transactionId = 3, auth=4, hmac=5 genToken=6, returnType = 7
       case "invoice":
         var https = require("https");
         var crypto = require("crypto");
@@ -103,8 +105,7 @@ module.exports = function (arg1, arg2) {
             dummy_val = str;
           });
         };
-        /***************************************************************************************** */
-        //amount = 1,  callback =2, transactionId = 3, auth=4, hmac=5 genToken=6, returnType = 7
+
         async function sendTrxn0() {
           var req = https.request(options, callback);
           var ts = ugugdul[3]; //Date.now();
@@ -113,6 +114,7 @@ module.exports = function (arg1, arg2) {
             amount: ugugdul[1], //0.01
             checksum: crypto
               //Golomt123
+              .createHmac("sha256", ugugdul[5])
               .update(ts + ugugdul[1] + ugugdul[7] + "https://google.mn")
               .digest("hex"),
             transactionId: ts,
