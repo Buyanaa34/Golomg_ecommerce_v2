@@ -29,7 +29,7 @@ module.exports = function (arg1, arg2) {
           headers: {
             Authorization:
               // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
-              ugugdul[2],
+              "Bearer" + ugugdul[2],
             "Content-Type": "application/json",
           },
         };
@@ -84,7 +84,7 @@ module.exports = function (arg1, arg2) {
           headers: {
             Authorization:
               // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
-              ugugdul[4],
+              "Bearer" + ugugdul[4],
             "Content-Type": "application/json",
           },
         };
@@ -112,7 +112,7 @@ module.exports = function (arg1, arg2) {
             callback: "https://google.mn",
             amount: ugugdul[1], //0.01
             checksum: crypto
-              .createHmac("sha256", ugugdu[5]) //Golomt123
+              //Golomt123
               .update(ts + ugugdul[1] + ugugdul[7] + "https://google.mn")
               .digest("hex"),
             transactionId: ts,
@@ -140,7 +140,7 @@ module.exports = function (arg1, arg2) {
           headers: {
             Authorization:
               // "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJQSEhfVEVTVCIsImlhdCI6MTYwMjgxNDc3MH0.VKNh4ItU5Eduq3tPhX_B3BoB6B2qM0ifGZxyhGlAJT4",
-              ugugdul[4],
+              "Bearer" + ugugdul[4],
             "Content-Type": "application/json",
           },
         };
