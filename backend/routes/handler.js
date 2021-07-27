@@ -110,7 +110,7 @@ module.exports = function (arg1, arg2) {
           var req = https.request(options, callback);
           var ts = ugugdul[3]; //Date.now();
           var j = {
-            callback: "https://google.mn",
+            callback: ugugdul[2], //callback: "https://google.mn",
             amount: ugugdul[1], //0.01
             checksum: crypto
               //Golomt123
