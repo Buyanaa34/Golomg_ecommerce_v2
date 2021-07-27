@@ -15,7 +15,7 @@ function Showdata(props) {
       preserveAspectRatio: "xMidYMid slice",
     },
   };
-  var isresult_failed = false;
+  var isresult_failed = true;
   var nehemjlel_array = [];
   nehemjlel_array[0] = "eng";
   nehemjlel_array[1] = "payment";
@@ -36,13 +36,6 @@ function Showdata(props) {
     const data = await fetch("/showdata");
     const items = await data.json();
     setItems(items);
-    const dummy_items = Object.entries(items);
-    for (const item of dummy_items) {
-      if (item != null) {
-        isresult_failed = false;
-        break;
-      }
-    }
   };
 
   const nehemjlel = () => {
@@ -82,15 +75,24 @@ function Showdata(props) {
   switch (props.location.ugugdul) {
     case "inquiry":
       //server-s data irsen esvel ireegui esehig shalgah heseg START
-
+      const dummy_items = Object.entries(items);
+      for (const item of dummy_items) {
+        if (item != null) {
+          isresult_failed = false;
+          break;
+        }
+      }
       //server-s data irsen esvel ireegui esehig shalgah heseg END
 
       //server-s irsen data hooson esvel oldoogui ued
-      if (items.status == "400" || isresult_failed) {
+      if (items.status == "400" || items.status == "403" || isresult_failed) {
         var tailbar = "Таны хайсан Transaction ID олдсонгүй";
         if (isresult_failed) {
           tailbar =
             "Өгөгдөл татах явцад алдаа гарлаа сүлжээгээ шалгаад дахин оролдоно уу";
+        }
+        if (items.status == "403") {
+          tailbar = "status:403 error:Forbidden";
         }
         const code_inquiry = (
           <div>
@@ -177,18 +179,24 @@ function Showdata(props) {
       }
 
     case "invoice":
-      if (items.status == "400" || isresult_failed) {
+      //server-s data irsen esvel ireegui esehig shalgah heseg START
+      const dummy_items1 = Object.entries(items);
+      for (const item of dummy_items1) {
+        if (item != null) {
+          isresult_failed = false;
+          break;
+        }
+      }
+      //server-s data irsen esvel ireegui esehig shalgah heseg END
+      if (items.status == "400" || items.status == "403" || isresult_failed) {
         var tailbar = "Хайлт илэрцгүй";
         if (isresult_failed) {
           tailbar =
             "Өгөгдөл татах явцад алдаа гарлаа сүлжээгээ шалгаад дахин оролдоно уу";
         }
-        // if (items.status == "400" || isresult_failed) {
-        //   var tailbar = "Таны хайсан Transaction ID олдсонгүй";
-        //   if (isresult_failed) {
-        //     tailbar =
-        //       "Өгөгдөл татах явцад алдаа гарлаа сүлжээгээ шалгаад дахин оролдоно уу";
-        //   }
+        if (items.status == "403") {
+          tailbar = "status:403 error:Forbidden";
+        }
         const code_invoice = (
           <div>
             <section>
@@ -255,11 +263,23 @@ function Showdata(props) {
       }
 
     case "tokens":
-      if (items.status == "400" || isresult_failed) {
+      //server-s data irsen esvel ireegui esehig shalgah heseg START
+      const dummy_items2 = Object.entries(items);
+      for (const item of dummy_items2) {
+        if (item != null) {
+          isresult_failed = false;
+          break;
+        }
+      }
+      //server-s data irsen esvel ireegui esehig shalgah heseg END
+      if (items.status == "400" || items.status == "403" || isresult_failed) {
         var tailbar = "Таны хайсан Token олдсонгүй";
         if (isresult_failed) {
           tailbar =
             "Өгөгдөл татах явцад алдаа гарлаа сүлжээгээ шалгаад дахин оролдоно уу";
+        }
+        if (items.status == "403") {
+          tailbar = "status:403 error:Forbidden";
         }
         const code_tokens = (
           <div>

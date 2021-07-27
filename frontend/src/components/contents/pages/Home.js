@@ -1,18 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import Lottie from "react-lottie";
-import * as loading from "../../../animations/69395-man-working-on-system.json";
 import "./style.css";
 function Home() {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    controls: false,
-    animationData: loading.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
   return (
     <div className="pagez">
       <h1 className="welcoming">Голомт банк интернет худалдаа тест хуудас</h1>
